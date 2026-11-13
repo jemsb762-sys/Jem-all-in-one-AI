@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07140f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jem AI">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/style.css">
+<title>Jem AI</title>
+</head>
+<body>
+<div class="app">
+<header class="appbar">
+  <div class="brand"><div class="brand-icon">J</div><div><b>Jem AI</b><small>Your AI assistant</small></div></div>
+  <button id="newChat" class="new-btn" aria-label="New chat">＋</button>
+</header>
+
+<main id="homeScreen" class="screen active">
+  <section class="greeting">
+    <div class="hello-chip"><span class="spark">✦</span> YOUR PERSONAL AI</div>
+    <h1>What can I help<br><em>you with today?</em></h1>
+    <p>Ask anything. Create, learn, solve problems and get things done.</p>
+  </section>
+  <section class="quick-tools">
+    <div class="section-heading"><b>Explore Jem AI</b><span>Choose a tool</span></div>
+    <div class="tool-grid">
+      <button class="tool-card" data-mode="chat"><span class="tool-symbol">✦</span><b>Ask anything</b><small>General AI assistant</small></button>
+      <button class="tool-card" data-mode="write"><span class="tool-symbol">✎</span><b>Write</b><small>Emails, posts, documents</small></button>
+      <button class="tool-card" data-mode="code"><span class="tool-symbol">⌘</span><b>Code</b><small>Build and debug</small></button>
+      <button class="tool-card" data-mode="translate"><span class="tool-symbol">文</span><b>Translate</b><small>Languages and meaning</small></button>
+      <button class="tool-card" data-mode="learn"><span class="tool-symbol">◈</span><b>Learn</b><small>Understand any topic</small></button>
+      <button class="tool-card" data-mode="business"><span class="tool-symbol">▦</span><b>Business</b><small>Ideas and planning</small></button>
+    </div>
+  </section>
+  <section class="prompt-section">
+    <div class="section-heading"><b>Try asking</b><span>Ideas to get started</span></div>
+    <button class="prompt-suggestion" data-prompt="Help me create a simple business plan for a small business.">Help me create a business plan <span>›</span></button>
+    <button class="prompt-suggestion" data-prompt="Explain artificial intelligence in simple English with examples.">Explain AI in simple words <span>›</span></button>
+    <button class="prompt-suggestion" data-prompt="Write a professional email asking for more information.">Write a professional email <span>›</span></button>
+  </section>
+  <section class="install-card" id="installCard">
+    <div class="install-icon">↥</div><div><b>Install Jem AI</b><small>Add it to your Home Screen for an app-like experience.</small></div>
+    <button id="installHelp">How?</button>
+  </section>
+</main>
+
+<main id="chatScreen" class="screen chat-screen">
+  <div class="chat-heading"><button id="backHome" class="back-btn">‹</button><div><b id="chatTitle">Ask Jem AI</b><small id="chatSubtitle">Ready when you are</small></div><button id="clearChat" class="clear-btn">New</button></div>
+  <div id="messages" class="messages">
+    <div class="empty-chat"><div class="empty-mark">✦</div><b>How can I help?</b><p>Send a message to start a conversation.</p></div>
+  </div>
+  <div class="composer-wrap">
+    <div class="mode-row" id="modeRow">✦ General assistant</div>
+    <form id="chatForm" class="composer">
+      <textarea id="messageInput" rows="1" placeholder="Message Jem AI..." aria-label="Message Jem AI"></textarea>
+      <button id="sendBtn" type="submit" aria-label="Send message">↑</button>
+    </form>
+    <div class="disclaimer">AI can make mistakes. Verify important information.</div>
+  </div>
+</main>
+
+<main id="settingsScreen" class="screen settings-screen">
+  <div class="settings-title"><span class="settings-mark">⚙</span><h1>Settings</h1><p>Make Jem AI yours.</p></div>
+  <div class="settings-list">
+    <div class="setting-row"><span>✦</span><div><b>App</b><small>Jem AI · All-in-one assistant</small></div><strong>v1.1</strong></div>
+    <button class="setting-row" id="installSetting"><span>⌂</span><div><b>Install app</b><small>Add Jem AI to your iPhone Home Screen</small></div><strong>›</strong></button>
+    <div class="setting-row"><span>◉</span><div><b>Privacy</b><small>Keep your API key on the server</small></div></div>
+  </div>
+  <p class="settings-note">Jem AI is a web app that can be installed on your Home Screen. AI replies require an internet connection and a configured AI API service.</p>
+</main>
+
+<nav class="tabbar">
+  <button class="tab active" data-screen="homeScreen"><span>⌂</span><small>Home</small></button>
+  <button class="tab" data-screen="chatScreen"><span>✦</span><small>Chat</small></button>
+  <button class="tab" data-screen="settingsScreen"><span>⚙</span><small>Settings</small></button>
+</nav>
+<div class="toast" id="toast"></div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
