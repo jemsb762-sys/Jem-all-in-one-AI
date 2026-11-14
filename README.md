@@ -12,7 +12,7 @@ A responsive installable AI chat app powered by the Groq API. Includes chat, wri
    - Environments: Production (and Preview/Development if needed)
 4. Save, then redeploy. Open the deployment URL and send a test message.
 
-Optional: set `GROQ_MODEL` to a model available to your Groq account. The default is `llama-3.3-70b-versatile`.
+Optional: set `GROQ_MODEL` to a model available to your Groq account. The default is `openai/gpt-oss-120b`.
 
 ## Run locally
 
